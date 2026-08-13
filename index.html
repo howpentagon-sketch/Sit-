@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Для тебя — приглашение</title>
+
+  <!-- Романтические шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Great Vibes для крупных фраз, Inter для обычного текста -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Фоновая анимация облаков и сердечек -->
+    <div class="background">
+      <div class="soft-clouds"></div>
+      <div class="light-spots"></div>
+      <div id="floating-hearts" aria-hidden="true"></div>
+    </div>
+
+    <!-- Общий контейнер сцен -->
+    <main class="scenes">
+
+      <!-- Сцена 1 -->
+      <section id="scene-1" class="scene active" aria-labelledby="s1-title">
+        <div class="scene-inner">
+          <h1 id="s1-title" class="headline glow">Привет, моя любовь <span class="heart-emoji">❤️</span></h1>
+          <p class="subtext">Мы с тобой вместе уже <strong>217 дней</strong>.</p>
+
+          <div class="actions">
+            <button class="btn marshmallow" data-next="scene-2">Как много <span class="small-emoji">🥺</span></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Сцена 2 -->
+      <section id="scene-2" class="scene" aria-labelledby="s2-title" hidden>
+        <div class="scene-inner">
+          <p id="s2-title" class="typing-text"></p>
+
+          <div class="actions">
+            <button class="btn marshmallow" data-next="scene-3" id="s2-next" hidden>Я рад <span class="small-emoji">🥺</span></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Сцена 3 -->
+      <section id="scene-3" class="scene" aria-labelledby="s3-title" hidden>
+        <div class="scene-inner">
+          <h2 id="s3-title" class="headline large">Сегодня хочу пригласить тебя на свидание <span class="small-emoji">🥰</span></h2>
+
+          <div class="actions">
+            <button class="btn marshmallow" id="open-letter-btn">На какое? <span class="small-emoji">💌</span></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Интерактивное письмо -->
+      <div id="letter-scene" class="overlay" hidden>
+        <div class="letter-wrap" role="dialog" aria-label="Приглашение">
+          <div class="envelope" id="envelope" tabindex="0" aria-label="Конверт: нажмите чтобы открыть">
+            <div class="flap"></div>
+            <div class="body">
+              <div class="heart-seal">❤</div>
+            </div>
+          </div>
+
+          <div class="note" id="note" hidden>
+            <div class="note-card">
+              <h3 class="note-title">Для тебя <span class="small-emoji">💌</span></h3>
+              <p class="note-text">
+                Приглашаю тебя сегодня провести классный вечер со мной.
+                Поиграть в игры, посмотреть фильм или видео и расслабиться, выпив пиво <span class="small-emoji">🥰</span>
+              </p>
+            </div>
+            <div class="actions note-actions">
+              <button class="btn large marshmallow" id="accept-btn">Я согласен <span class="small-emoji">❤️</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Финал -->
+      <section id="scene-final" class="scene final" hidden aria-hidden="true">
+        <div class="scene-inner">
+          <h2 class="headline celebrate">Ура! Тогда сегодня наше свидание <span class="small-emoji">❤️</span></h2>
+          <p class="subtext">Люблю тебя <span class="small-emoji">🥰</span></p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Финальный контейнер для плавающих сердечек и крупных -->
+    <div id="final-hearts" aria-hidden="true"></div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
